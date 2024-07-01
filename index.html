@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./webfonts/">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>LuckyDraw</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand text-white fs-3 fw-bold" href="#">Lucky Draw</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars  icon"></i>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link text-white" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Winner History</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <div class="text-center mt-5">
+            <h3 class="fw-bold mb-1">Today's Lucky Number</h3>
+            <div class=" text-primary mt-2 mb-1 fw-lighter" id="lucky-number" style="font-size: 5.5rem;">123</div>
+            <p class="mt-4"><span class="badge badge-success">Prize USD 100</span></p>
+            <p class="mt-2">Next draw at 12 AM</p>
+        </div>
+        <div class="text-center mt-5 mb-5">
+            <h2 class="fw-medium">User Submissions</h2>
+            <div class="container">
+                <div class="row justify-content-center" id="submissions">
+                    <div class="col-3 col-md-1 submission-number p-0">
+                       <div class="rounded text-white p-2 bg-info ms-1 my-1">123</div> 
+                    </div>
+                    <div class="col-3 col-md-1 submission-number p-0">
+                        <div  class=" rounded text-white p-2 bg-info ms-1 my-1">456</div> 
+                    </div>
+                    <div class="col-3 col-md-1 submission-number p-0">
+                        <div class=" rounded text-white p-2 bg-info ms-1 my-1">123</div> 
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button id="load-more" class="btn btn-primary">Load More</button>
+                </div>
+            </div>
+        </div>
+        <div class="brand">
+            <h2 class="fw-bold mb-4 text-center">Register your brand here</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <img src="https://placehold.co/600x400" alt="Ad 1" class="rounded">
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <img src="https://placehold.co/600x400" alt="Ad 1" class="rounded">
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <img src="https://placehold.co/600x400" alt="Ad 1" class="rounded">
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <img src="https://placehold.co/600x400" alt="Ad 1" class="rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="p-3 bg-primary d-flex justify-content-center">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn bg-white text-primary rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Submit Your Guess
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade rounded" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                <h1 class="modal-title fs-5 fw-bold mb-3" id="staticBackdropLabel">Submit Your Guess</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <form>
+                        <div class="mb-4">
+                            <label for="number" class=" form-label block secondary fw-bold mb-2" style="font-weight: 700;">Your Guess (3 digits):
+                                <!-- Tooltip -->
+                            <small style="font-weight: 700; color: rgba(107, 114, 128,1);">(Hint: Choose any three-digit number)</small>
+                            </label>
+                            <input type="text" id="number" class="form-control px-3 py-2 border rounded">
+                        </div>
+                        <div class="mb-4">
+                        <label for="brand" class="form-label block secondary fw-bold mb-2" style="font-weight: 700;">Brand</label>
+                        <input type="text" class="form-control px-3 py-2 border rounded" id="brand">
+                        </div>
+                        <div class="mb-4">
+                            <label for="username" class="form-label block secondary fw-bold mb-2" style="font-weight: 700;">Username</label>
+                            <input type="text" class="form-control" id="username">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center border-0 pt-0">
+                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+                </div>
+            </div>
+
+    </footer>
+
+</body>
+</script>
+<script src="./javascript/bootstrap.bundle.min.js"> </script>
+<script src="./javascript/all.min.js"> </script>
+<script>
+        document.getElementById('lucky-number').textContent = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+        document.getElementById('load-more').addEventListener('click', function() {
+            const submissions = document.getElementById('submissions');
+            for (let i = 0; i < 12; i++) {
+                const div = document.createElement('div');
+                div.className = 'col-3 col-md-1 submission-number p-0';
+                div.innerHTML = '<div  class="rounded text-white p-2 bg-info ms-1 my-1">' + Math.floor(Math.random() * 1000).toString().padStart(3, '0') + '</div>';
+                submissions.appendChild(div);
+            }
+        });
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+:root{
+    --orange-color:#f06604;
+    --white-color:#ffffff;
+    --black-color:#000000;
+    --gray-color:#d7d7d7;
+    --orangeDark-color:#b33f00
+}
+@font-face {
+    font-family: "Most Heros";
+    src:url(../webfonts/Most\ Heroes.ttf) format("truetype");
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+body {
+  box-sizing: border-box;
+ }
+
+.navbar-nav .nav-item:last-of-type{
+    margin-left: 1.5rem;
+    }
+ .navbar-light .icon {
+    color: #a5c0f3;
+    font-size: 2rem;
+}
+button:focus:not(:focus-visible) {
+    outline: 0;
+    color: white;
+    border: none;
+    box-shadow: none;
+}
+.navbar-toggler {
+    color: white
+}
+@media screen and (max-width:991px){
+    .navbar-nav .nav-item:last-of-type{
+        margin-left: 0;
+        }
+    }
+  /* header */
+  .brand{
+    padding: 1rem 0;
+  }
+  .brand img{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
